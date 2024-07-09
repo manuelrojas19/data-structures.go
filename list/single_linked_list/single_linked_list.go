@@ -29,7 +29,7 @@ func (list *SingleLinkedList[T]) AddAtEnd(val T) {
 	}
 
 	current := list.Head
-	for ; current.Next != nil; current = current.Next {
+	for current.Next != nil {
 	}
 	current.Next = node
 	list.size++
@@ -41,8 +41,8 @@ func (list *SingleLinkedList[T]) DeleteAtEnd() bool {
 	}
 
 	current := list.Head
-
-	for ; current.Next != nil; current = current.Next {
+	for current.Next != nil {
+		current = current.Next
 	}
 
 	current.Next = nil
